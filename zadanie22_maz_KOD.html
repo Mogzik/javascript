@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"><html>
+        <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styl.css">
+        </head>
+        <body>
+        <script type="text/javascript">
+        function a_maz()
+        {
+        var a= parseFloat(document.getElementById('dlugosc').value);
+        var b= parseFloat(document.getElementById('dlugosc2').value);
+        var c= a*b;
+        document.getElementById("nazwa").innerHTML ="Pole prostokąta= "+c.toFixed(2)+" cm^2";
+        }
+        function b_maz()
+        {
+        var a= parseFloat(document.getElementById('dlugosc').value);
+        var b= parseFloat(document.getElementById('dlugosc2').value);
+        var d= 2*a+2*b;
+        document.getElementById("nazwa").innerHTML ="Obwód prostokąta= "+d.toFixed(2)+" cm";
+        }
+        </script>
+        <h1>Wszystko o PROSTOKĄCIE</h1><br><br>
+        Podaj długość boku 1: <input type="text" id="dlugosc" value="podaj długość"> cm<br><br><br>
+        Podaj długość boku 2: <input type="text" id="dlugosc2" value="podaj długość"> cm<br><br><br>
+        <input type="button" name="a_maz" value="Oblicz pole" Onclick="a_maz()"><br><br>
+        <input type="button" name="b_maz" value="Oblicz obwod" Onclick="b_maz()"><br><br>
+        <div style="color:red;font-size:50px;"id="nazwa"></div>
+        </body>
+        </html></textarea>
+</body>
+</html>
