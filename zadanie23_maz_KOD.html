@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10">
+        <html>
+        <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styl.css">
+        <script type="text/javascript">
+            function Drabina(d,x)
+            {
+            d= parseFloat(d);
+            x= parseFloat(x);
+            l=d*d+x*x;
+            m=Math.sqrt(l);
+            document.getElementsByName('dlugosc')[0].value=m.toFixed(2);
+            }
+            function Kat(d,x)
+            {
+            d= parseFloat(d);
+            x= parseFloat(x);
+            tg_alfa=d/x;
+            radianty= Math.atan(tg_alfa);
+            stopnie = (radianty * 180)/Math.PI;
+            document.getElementsByName('alfa')[0].value=stopnie.toFixed(2);
+            }
+            </script>
+        </head>
+        <body>
+        Obliczanie odległości od drabiny i kąta<br><br>
+        <form name="formularz" action="..." onsubmit="Drabina(this.wysokosc.value,this.odleglosc.value); Kat(this.wysokosc.value,this.odleglosc.value);return false">
+        Podaj d=
+        <input size="6" name="wysokosc">
+        Podaj x= 
+        <input size="6" name="odleglosc">
+        <br><br>
+        <input type="submit" value="oblicz">
+        <br><br>
+        Drabina=
+        <input size="6" name="dlugosc">
+        Alfa=
+        <input size="6" name="alfa">
+        </form>
+        </body>
+        </html>
+    </textarea>
+</body>
+</html>
