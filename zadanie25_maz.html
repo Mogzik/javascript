@@ -1,0 +1,44 @@
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div style="font-size: 54px;color:blue;">
+<script language="JavaScript">
+    
+function okno_zamknij()
+{
+ window.close()
+}
+     
+     
+    var n2_maz=prompt("No = ","");
+    
+    var t_maz=prompt("t = ","");
+    
+    var t1_maz=prompt("T1/2 = ","");
+    
+    var n2_maz=parseFloat(n2_maz);
+    var t_maz=parseFloat(t_maz);
+    var t1_maz=parseFloat(t1_maz);
+    
+    var  lambda_maz=(-((Math.log(2))/t_maz)*t1_maz); 
+    
+    var 	n2_maz = Math.E;
+            n2_maz = (Math.pow(n2_maz,lambda_maz))*n2_maz;
+            
+
+     document.write("N0 = " + n2_maz+" [sztuk]<br>");
+    
+     document.write("t = " + t_maz +" [lat]<br>");
+    
+     document.write("T1/2 = " + t1_maz +" [lat]<br>");
+    
+    document.write("Lambda = " + -lambda_maz.toFixed(7) +" [1/rok]<br>");
+    
+    document.write("N = " +n2_maz.toFixed(7)+" [sztuk]<br>");
+    
+</script>
+    </div>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij()"/>
+</body>
+</html>     
