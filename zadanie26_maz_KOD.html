@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+    <script language="JavaScript">
+
+        function p(a, b, h) {
+            a_maz = parseFloat(a);
+            b_maz = parseFloat(b);
+            h_maz = parseFloat(h);
+
+            Math.abs(a_maz);
+            Math.abs(b_maz);
+            Math.abs(h_maz);
+
+            pole_wynik = 0.5 * (a_maz + b_maz) * h_maz;
+
+            document.getElementsByName('pol')[0].value = pole_wynik.toFixed(2);
+
+            pokaz1.innerHTML = "pole=" + pole_wynik.toFixed(2) + " cm^2" + "<br>";
+        }
+        function o(a, b, h) {
+            a_maz = parseFloat(a);
+            b_maz = parseFloat(b);
+            h_maz = parseFloat(h);
+
+            Math.abs(a_maz);
+            Math.abs(b_maz);
+            Math.abs(h_maz);
+
+            var ramie = Math.sqrt(Math.pow((a_maz - b_maz) / 2, 2) + Math.pow(h_maz, 2));
+
+            obwod_wynik = a_maz + b_maz + 2 * ramie;
+
+            document.getElementsByName('obw')[0].value = obwod_wynik.toFixed(2);
+
+            pokaz2.innerHTML = "obwod=" + obwod_wynik.toFixed(2) + "cm";
+        }
+    </script>
+</head>
+
+<body>
+    <br> <br>
+    <form name="formularz" action="..."
+        onsubmit="p(this.a_maz.value,this.b_maz.value,this.h_maz.value); o(this.a_maz.value,this.b_maz.value,this.h_maz.value);return false">
+        Podaj a=
+        <input size="6" name="a_maz">
+        Podaj b=
+        <input size="6" name="b_maz">
+        Podaj h=
+        <input size="6" name="h_maz">
+        <br> <br>
+        <input TYPE="submit" Value="oblicz">
+        <br> <br>
+        pole=
+        <input size="6" name="pol">
+        obwod=
+        <input size="6" name="obw">
+    </form>
+    <table>
+        <tr id="pokaz1"></tr>
+        <tr id="pokaz2"></tr>
+    </table>
+</body>
+
+</html>
