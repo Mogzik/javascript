@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styl.css">
+<script type="text/javascript">
+var x1_maz=parseFloat(prompt("x1=",""));
+var x2_maz=parseFloat(prompt("x2=",""));
+
+
+radiant = (x1_maz*Math.PI)/180;
+y1_maz= 3*Math.pow(x1_maz,11/13);
+y2_maz= 2*Math.cos(radiant)+3*Math.sin(radiant)
+y3_maz= Math.pow(Math.pow(x1_maz,5)+2*Math.pow(x2_maz,4),1/3)*Math.abs(x1_maz-x2_maz);
+
+document.write("x1="+x1_maz+"&nbsp&nbsp&nbsp&nbsp&nbspx2="+x2_maz+"<br>");
+document.write("x1="+x1_maz+"&nbsp&nbsp&nbsp&nbsp&nbspx1="+radiant.toFixed(2)+"<br>");
+document.write("y1="+y1_maz.toFixed(2)+"<br>");
+document.write("y2="+y2_maz.toFixed(2)+"<br>");
+document.write("y3="+y3_maz.toFixed(2));
+</script>
+</head>
+<body>
+</body>
+</html>
