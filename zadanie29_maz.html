@@ -43,6 +43,19 @@
     <li><h3>Słowo kluczowe this pozwala odwołać się do pola lub metody obiektu z wnętrza tego obiektu.</h3></li>
     </ul>
     <li><h1>Konstruktor w JS na podstawie przykładu wraz z opisem.</h1></li>
+    <ul>
+    <li><h3>Zostanie utworzony konstruktor o nazwie klient z właściwościami nazwisko, imie, zawod oraz metodą wypisz(). Właściwościom obiektu zostały przypisane wartości parametrów. Użyte słowo kluczowe this odnosi się do aktualnego obiektu i pozwala na przypisanie wartości parametru do odpowiedniego pola tego obiektu.</h3></li>
+    <li><h3>function klient(nazwisko_k,imie_k,zawod_k)
+        {
+        this.nazwisko=nazwisko_k;
+        this.imie=imie_k;
+        this.zawod=zawod_k;
+        wypisz = function ()
+        {
+        alert(this.nazwisko + ' ' + this.imie)
+        }
+        }</h3></li>
+    </ul>
     <li><h1>Znaczenie słowa kluczowego New wraz z przykładem.</h1></li>
     <ul>
     <li><h3>Do utworzenia nowego obiektu na podstawie konstruktora stosowane jest słowo kluczowe new.
