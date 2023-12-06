@@ -1,32 +1,41 @@
 <html>
   <body>
     <textarea>
-      <html>
-<head>
-<script type="text/javascript">
-function Router(predkosc_k,przeznaczenie_k,czestotliwosc_k)
-{
-this.predkosc=predkosc_k;
-this.przeznaczenie=przeznaczenie_k;
-this.czestotliwosc=czestotliwosc_k;
-}
-Router.prototype.wypisz = function () 
-{
-alert(this.predkosc + ' ' + this.przeznaczenie+ ' ' + this.czestotliwosc);
-};
-var Router1 = new Router("300mb/s", "4G", "2.4Ghz"); 
-var Router2 = new Router('400mb/s', '5G', '2.4Ghz');
-Router1.wypisz(); 
-Router2.wypisz();
-document.write("dostęp do właściwości"+"<br>");
+<html>
 
-document.write("Router pierwszy"+" "+Router1.predkosc+" "+Router1.przeznaczenie+" "+Router1.czestotliwosc+"<br>");
-document.write("Router drugi"+" "+Router2.predkosc+" "+Router2.przeznaczenie+" "+Router2.czestotliwosc);
-</script>
+<head>
+
+    <meta charset="UTF-8">
+
+    <script type="text/javascript">
+        function klient(rozmiar_m, kolor_m, material_m, objetosc_m) {
+            this.rozmiar = rozmiar_m;
+            this.kolor = kolor_m;
+            this.material = material_m;
+            this.objetosc = objetosc_m;
+
+        }
+        klient.prototype.pudelko_pokaz_mazgaj = function () {
+            alert(this.rozmiar + ' ' + this.kolor + ' ' + this.material + ' ' + this.objetosc);
+        };
+        var pudełko1 = new klient("Małe", "Brązowy", "Karton", "10cm3");
+        var pudełko2 = new klient('Duże', 'Pomarańczowy', 'Metal', '20cm3');
+        var pudełko3 = new klient('Średnie', 'Szary', 'Drewno','30cm3');
+        pudlo1.pudełko_pokaz_mazgaj();
+        pudlo2.pudełko_pokaz_mazgaj();
+        pudlo3.pudełko_pokaz_mazgaj();
+        document.write("dostęp do właściwości" + "<br>");
+        document.write("Pierwsze pudełko" + " " + pudełko1.rozmiar + " " + pudełko1.kolor + " " + pudełko1.material + " " + pudełko1.objetosc + "<br>");
+        document.write("Drugie pudełko" + " " + pudełko2.rozmiar + " " + pudełko2.kolor + " " + pudełko2.material + " " + pudełko2.objetosc + "<br>");
+        document.write("Trzecie pudełko" + " " + pudełko3.rozmiar + " " + pudełko3.kolor + " " + pudełko3.material + " " + pudełko3.objetosc);
+    </script>
 </head>
+
 <body>
-<br>
-programowanie obiektowe
+    <br>
+    <br>
+    programowanie obiektowe
+
 </body>
 </html>
     </textarea>
