@@ -1,19 +1,19 @@
 <html>
 <head>
 <script type="text/javascript">
-var Router = {
-predkosc: '300mb/s',
-przeznaczenie: '4G',
-czestotliwosc: '2.4Ghz',
-Router_wyswietl_sykutera: function ()
+var pudełko  = {
+kształt: 'Kwadratowy',
+sklep: 'Ikea',
+materiał: 'Karton',
+pudełko_wyświetl_mazgaj: function ()
 {
-document.write(this.predkosc + ' ' + this.czestotliwosc)
+document.write(this.kształt + '<br>' + this.sklep + '<br>' + this.materiał)
 }
 }
-Router.Router_wyswietl_sykutera();
-Router.data=2010;
-Router.wypisz=function() {alert('data wydania: ' + this.data + 'r')}
-Router.wypisz();
+pudełko.pudełko_wyświetl_mazgaj();
+pudełko.data=1817;
+pudełko.wypisz=function() {alert('powstał w: ' + this.data + 'roku')}
+pudełko.wypisz();
 </script>
 </head>
 <body>
