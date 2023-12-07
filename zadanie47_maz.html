@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+<title>Sprawdzenie danych Twoje nazwisko </title>
+<meta charset="utf-8">
+</head>
+<body>
+<div style="color:red;font-size:50px;">
+<script language="JavaScript">
+do {
+var bok1=prompt("pierwszy bok=","");
+var a_maz=parseFloat(bok1);
+}
+while (a_maz<=0);
+do {
+var bok2=prompt("drugi bok=","");
+var b_maz=parseFloat(bok2);
+}
+while(!( b_maz>0));
+do {
+var bok3=prompt("trzeci bok=","");
+var c_maz=parseFloat(bok3);
+}
+while(!( c_maz>0));
+if(a_maz+b_maz>c_maz)
+{
+    document.write("Z podanych boków wychodzi trójkąt");
+}else{
+    if(b_maz+c_maz>a_maz)
+    {
+        document.write("Z podanych boków wychodzi trójkąt"); 
+    }else{
+        if(c_maz+a_maz>b_maz)
+        {
+            document.write("Z podanych boków wychodzi trójkąt");
+        }else{
+            document.write("Z podanych boków nie wychodzi trójkąt");
+        }
+    }
+}
+
+</script>
+</div>
+</body>
+</html>
