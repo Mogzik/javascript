@@ -31,6 +31,16 @@
             document.write("Postać kanoniczna:" +a+"(x-"+p+")^2+"+q+"<br>");
             document.write("Delta="+delta+"<br>");
           }
+          if (a>0)
+          {
+            document.write("Funkcja jest malejąca w przedziale (∞,"+p+")<br>");
+            document.write("Funkcja jest rosnąca w przedziale ("+p+",∞)<br>");
+          }
+          if (a<0)
+          {
+            document.write("Funkcja jest rosnąca w przedziale (∞,"+p+")<br>");
+            document.write("Funkcja jest malejąca w przedziale ("+p+",∞)<br>");
+          }
 
           if(delta>0)
           {
