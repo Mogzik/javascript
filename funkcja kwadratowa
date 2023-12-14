@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color:green; font-size: 2cm;" >
+    <script>
+          var a_maz=prompt("a=","");
+          var b_maz=prompt("b=","");
+          var c_maz=prompt("c=","");
+
+          var a=parseFloat(a_maz);
+          var b=parseFloat(b_maz);
+          var c=parseFloat(c_maz);
+          delta = (b*b)-4*a*c;
+          p = (-1*b)/2*a;
+          q = (-1*delta)/4*a;
+          x0 = (-1*b)/2*a;
+          x1 = (-1*b-Math.sqrt(delta))/2*a;
+          x2 = (-1*b+Math.sqrt(delta))/2*a;
+
+          if(a==0)
+          {
+            document.write("To nie jest funkcja kwadratowa");
+          }else{
+            document.write("Postać ogólna:" +a+"x^2+"+b+"x+"+c+"<br>");
+            document.write("Postać kanoniczna:" +a+"(x-"+p+")^2+"+q+"<br>");
+            document.write("Delta="+delta+"<br>");
+          }
+
+          if(delta>0)
+          {
+            document.write("x1=" +x1+"<br>");
+            document.write("x2=" +x2+"<br>");
+            document.write("Postać iloczynowa:" +a+"(x-"+x1+")(x-"+x2+")<br>");
+          }
+
+          if(delta==0)
+          {
+            document.write("x0=" +x0+"<br>");
+            document.write("Postać iloczynowa:" +a+"(x-"+x0+")^2<br>");
+          }
+
+          if (delta<0)
+          {
+            document.write("brak miejsc zerowych");
+          }
+    </script>
+    </div>
+</body>
+</html>
