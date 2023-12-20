@@ -2,70 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator funkcji kwadratowej</title>
-</head>
-<body>
-    <form id="quadraticForm">
-        <label for="a">Podaj a:</label>
-        <input type="text" id="a" name="a" required><br>
-
-        <label for="b">Podaj b:</label>
-        <input type="text" id="b" name="b" required><br>
-
-        <label for="c">Podaj c:</label>
-        <input type="text" id="c" name="c" required><br>
-
-        <input type="button" value="Oblicz" onclick="FunkcjaKwadratowa()">
-    </form>
-    <div style="color:green; font-size: 2cm;">
-
-    <script>
-        function FunkcjaKwadratowa() {
-            var a_maz = document.getElementById('a').value;
-            var b_maz = document.getElementById('b').value;
-            var c_maz = document.getElementById('c').value;
-
-            var a = parseFloat(a_maz);
-            var b = parseFloat(b_maz);
-            var c = parseFloat(c_maz);
-
-            var delta = (b * b) - 4 * a * c;
-            var p = (-1 * b) / (2 * a);
-            var q = (-1 * delta) / (4 * a);
-            var x0 = (-1 * b) / (2 * a);
-            var x1 = (-1 * b - Math.sqrt(delta)) / (2 * a);
-            var x2 = (-1 * b + Math.sqrt(delta)) / (2 * a);
+    <title>Funkcja kwadratowa</title>
+    <style>
+        div {
+            color: green;
+            font-size: 2cm;
+        }
+    </style>
+    <script language="JavaScript">
+        function Blad_mazgaj(a_maz, b_maz, c_maz) {
+            a = parseFloat(a_maz);
+            b = parseFloat(b_maz);
+            c = parseFloat(c_maz);
 
             if (a == 0) {
-                document.write("To nie jest funkcja kwadratowa");
-            } else {
-                document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać ogólna: " + a + "x^2 + " + b + "x + " + c + "</p>");
-                document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać kanoniczna: " + a + "(x - " + p + ")^2 + " + q + "</p>");
-                document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Delta=" + delta + "</p>");
+                alert("Funkcja nie jest kwadratowa");
+                document.getElementById('wyprowadz_W_maz').innerHTML = "";
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "";
+                document.getElementById('wyprowadz_M_maz').innerHTML = "";
+                document.getElementById('wyprowadz_pi_maz').innerHTML = "";
+                document.getElementById('wyprowadz_O_maz').innerHTML = "";
+            }
+        }
 
-                if (a > 0) {
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest malejąca w przedziale (-∞, " + p + ")</p>");
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest rosnąca w przedziale (" + p + ", ∞)</p>");
-                } else if (a < 0) {
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest rosnąca w przedziale (-∞, " + p + ")</p>");
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest malejąca w przedziale (" + p + ", ∞)</p>");
+        function W_mazgaj(a_maz, b_maz, c_maz) {
+            a = parseFloat(a_maz);
+            b = parseFloat(b_maz);
+            c = parseFloat(c_maz);
+
+            p = -(b) / (2 * a);
+            delta = Math.pow(b, 2) - 4 * a * c;
+            q = -(delta) / (4 * a);
+
+            document.getElementById('wyprowadz_W_maz').innerHTML = "Wierzchołek=(" + p.toFixed(2) + "," + q.toFixed(2) + ")<br>";
+
+            if (p > 0 && q > 0) {
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x - " + p.toFixed(2) + ")^2 + " + q.toFixed(2) + "<br>";
+            } else if (p > 0 && q < 0) {
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x - " + p.toFixed(2) + ")^2 - " + -(q.toFixed(2)) + "<br>";
+            } else if (p < 0 && q > 0) {
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x + " + -(p.toFixed(2)) + ")^2 + " + q.toFixed(2) + "<br>";
+            } else if (p < 0 && q < 0) {
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x + " + -(p.toFixed(2)) + ")^2 - " + -(q.toFixed(2)) + "<br>";
+            }
+        }
+
+        function M_mazgaj(a_maz, b_maz, c_maz) {
+            a = parseFloat(a_maz);
+            b = parseFloat(b_maz);
+            c = parseFloat(c_maz);
+
+            delta = Math.pow(b, 2) - 4 * a * c;
+
+            if (delta < 0) {
+                document.getElementById('wyprowadz_M_maz').innerHTML = "Brak miejsc zerowych, ponieważ delta<0";
+                document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: brak";
+            } else if (delta == 0) {
+                x = -b / (2 * a);
+                document.getElementById('wyprowadz_M_maz').innerHTML = "x0=" + x + " , delta=0";
+
+                if (x > 0) {
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x - " + x.toFixed(2) + ")^2";
+                } else if (x < 0) {
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x + " + -(x.toFixed(2)) + ")^2";
                 }
 
-                if (delta > 0) {
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> x1 = " + x1 + "</p>");
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> x2 = " + x2 + "</p>");
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać iloczynowa: " + a + "(x - " + x1 + ")(x - " + x2 + ")</p>");
-                } else if (delta == 0) {
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> x0 = " + x0 + "</p>");
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać iloczynowa: " + a + "(x - " + x0 + ")^2</p>");
-                } else {
-                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Brak miejsc zerowych </p>");
+            } else if (delta > 0) {
+                xi = (-b - Math.sqrt(delta)) / (2 * a);
+                xii = (-b + Math.sqrt(delta)) / (2 * a);
+                document.getElementById('wyprowadz_M_maz').innerHTML = "x1=" + xi + " x2=" + xii + " , ponieważ delta>0";
+
+                if (p > 0 && q > 0) {
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x - " + xi.toFixed(2) + ")(x - " + xii.toFixed(2) + ")<br>";
+                } else if (p > 0 && q < 0) {
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x - " + xi.toFixed(2) + ")(x + " + -(xii.toFixed(2)) + ")<br>";
+                } else if (p < 0 && q > 0) {
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x + " + -(xi.toFixed(2)) + ")(x - " + xii.toFixed(2) + ")<br>";
+                } else if (p < 0 && q < 0) {
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x + " + -(xi.toFixed(2)) + ")(x + " + -(xii.toFixed(2)) + ")<br>";
                 }
             }
         }
+
+        function O_mazgaj(a_maz, b_maz, c_maz) {
+            a = parseFloat(a_maz);
+            b = parseFloat(b_maz);
+            c = parseFloat(c_maz);
+
+            p = -(b) / (2 * a);
+
+            if (a > 0) {
+                document.getElementById('wyprowadz_O_maz').innerHTML = "Funkcja maleje w przedziale=(-∞," + p.toFixed(2) + "], rośnie w [" + p.toFixed(2) + ",∞)";
+            } else if (a < 0) {
+                document.getElementById('wyprowadz_O_maz').innerHTML = "Funkcja rośnie w przedziale=(-∞," + p.toFixed(2) + "], maleje w [" + p.toFixed(2) + ",∞)";
+            }
+        }
     </script>
-    </div>
+</head>
+<body>
+    <h1>Funkcja kwadratowa</h1>
+    <form name="formularz" action="..." onsubmit="W_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); M_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); O_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); Blad_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); return false">
+        <label for="A_maz">Podaj a:</label>
+        <input size="6" name="A_maz"><br><br>
+        <label for="B_maz">Podaj b:</label>
+        <input size="6" name="B_maz"><br><br>
+        <label for="C_maz">Podaj c:</label>
+        <input size="6" name="C_maz"><br><br>
+        <input type="submit" value="Oblicz">
+    </form>
+    <table style="color: green; font-size: 2cm;">
+        <tr id="wyprowadz_W_maz"></tr>
+        <tr id="wyprowadz_pk_maz"></tr>
+        <tr id="wyprowadz_M_maz"></tr>
+        <tr id="wyprowadz_pi_maz"></tr>
+        <tr id="wyprowadz_O_maz"></tr>
+    </table>
 </body>
 </html>
