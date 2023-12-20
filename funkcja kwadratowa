@@ -4,61 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator funkcji kwadratowej</title>
 </head>
 <body>
-    <div style="color:green; font-size: 2cm;" >
+    <form id="quadraticForm">
+        <label for="a">Podaj a:</label>
+        <input type="text" id="a" name="a" required><br>
+
+        <label for="b">Podaj b:</label>
+        <input type="text" id="b" name="b" required><br>
+
+        <label for="c">Podaj c:</label>
+        <input type="text" id="c" name="c" required><br>
+
+        <input type="button" value="Oblicz" onclick="FunkcjaKwadratowa()">
+    </form>
+    <div style="color:green; font-size: 2cm;">
+
     <script>
-          var a_maz=prompt("a=","");
-          var b_maz=prompt("b=","");
-          var c_maz=prompt("c=","");
+        function FunkcjaKwadratowa() {
+            var a_maz = document.getElementById('a').value;
+            var b_maz = document.getElementById('b').value;
+            var c_maz = document.getElementById('c').value;
 
-          var a=parseFloat(a_maz);
-          var b=parseFloat(b_maz);
-          var c=parseFloat(c_maz);
-          delta = (b*b)-4*a*c;
-          p = (-1*b)/2*a;
-          q = (-1*delta)/4*a;
-          x0 = (-1*b)/2*a;
-          x1 = (-1*b-Math.sqrt(delta))/2*a;
-          x2 = (-1*b+Math.sqrt(delta))/2*a;
+            var a = parseFloat(a_maz);
+            var b = parseFloat(b_maz);
+            var c = parseFloat(c_maz);
 
-          if(a==0)
-          {
-            document.write("To nie jest funkcja kwadratowa");
-          }else{
-            document.write("Postać ogólna:" +a+"x^2+"+b+"x+"+c+"<br>");
-            document.write("Postać kanoniczna:" +a+"(x-"+p+")^2+"+q+"<br>");
-            document.write("Delta="+delta+"<br>");
-          }
-          if (a>0)
-          {
-            document.write("Funkcja jest malejąca w przedziale (∞,"+p+")<br>");
-            document.write("Funkcja jest rosnąca w przedziale ("+p+",∞)<br>");
-          }
-          if (a<0)
-          {
-            document.write("Funkcja jest rosnąca w przedziale (∞,"+p+")<br>");
-            document.write("Funkcja jest malejąca w przedziale ("+p+",∞)<br>");
-          }
+            var delta = (b * b) - 4 * a * c;
+            var p = (-1 * b) / (2 * a);
+            var q = (-1 * delta) / (4 * a);
+            var x0 = (-1 * b) / (2 * a);
+            var x1 = (-1 * b - Math.sqrt(delta)) / (2 * a);
+            var x2 = (-1 * b + Math.sqrt(delta)) / (2 * a);
 
-          if(delta>0)
-          {
-            document.write("x1=" +x1+"<br>");
-            document.write("x2=" +x2+"<br>");
-            document.write("Postać iloczynowa:" +a+"(x-"+x1+")(x-"+x2+")<br>");
-          }
+            if (a == 0) {
+                document.write("To nie jest funkcja kwadratowa");
+            } else {
+                document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać ogólna: " + a + "x^2 + " + b + "x + " + c + "</p>");
+                document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać kanoniczna: " + a + "(x - " + p + ")^2 + " + q + "</p>");
+                document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Delta=" + delta + "</p>");
 
-          if(delta==0)
-          {
-            document.write("x0=" +x0+"<br>");
-            document.write("Postać iloczynowa:" +a+"(x-"+x0+")^2<br>");
-          }
+                if (a > 0) {
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest malejąca w przedziale (-∞, " + p + ")</p>");
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest rosnąca w przedziale (" + p + ", ∞)</p>");
+                } else if (a < 0) {
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest rosnąca w przedziale (-∞, " + p + ")</p>");
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Funkcja jest malejąca w przedziale (" + p + ", ∞)</p>");
+                }
 
-          if (delta<0)
-          {
-            document.write("brak miejsc zerowych");
-          }
+                if (delta > 0) {
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> x1 = " + x1 + "</p>");
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> x2 = " + x2 + "</p>");
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać iloczynowa: " + a + "(x - " + x1 + ")(x - " + x2 + ")</p>");
+                } else if (delta == 0) {
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> x0 = " + x0 + "</p>");
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Postać iloczynowa: " + a + "(x - " + x0 + ")^2</p>");
+                } else {
+                    document.write("<p style='color: green; font-size: 2cm; margin: 0;'> Brak miejsc zerowych </p>");
+                }
+            }
+        }
     </script>
     </div>
 </body>
