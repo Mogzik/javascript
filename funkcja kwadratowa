@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Funkcja kwadratowa - Mazgaj</title>
+    <style>
+      input{
+        font-size: 2cm;
+         color: green;
+      }
+    </style>
     <script language="JavaScript">
         function Blad_mazgaj(a_maz, b_maz, c_maz) {
             a = parseFloat(a_maz);
@@ -28,16 +34,19 @@
             delta = Math.pow(b,2) - 4 * a * c;
             q = -(delta) / (4*a);
 
-            document.getElementById('wyprowadz_W_maz').innerHTML = "Wierzchołek=(" + p.toFixed(2) + "," + q.toFixed(2) + ")<br>";
+            document.getElementById('wyprowadz_W_maz').innerHTML = "Wierzchołek= (" + p.toFixed(2) + ", " + q.toFixed(2) + ")<br>";
 
             if (p>0&&q>0) {
-                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x - " + p.toFixed(2) + ")^2 + " + q.toFixed(2) + "<br>";
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)= " + a.toFixed(2) + "(x - " + p.toFixed(2) + ")^2 + " + q.toFixed(2) + "<br>";
             } else if (p>0&&q<0) {
-                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x - " + p.toFixed(2) + ")^2 - " + -(q.toFixed(2)) + "<br>";
-            } else if (p<0&& q>0) {
-                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x + " + -(p.toFixed(2)) + ")^2 + " + q.toFixed(2) + "<br>";
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)= " + a.toFixed(2) + "(x - " + p.toFixed(2) + ")^2 - " + -(q.toFixed(2)) + "<br>";
+            } else if (p<0&&q>0) {
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)= " + a.toFixed(2) + "(x + " + -(p.toFixed(2)) + ")^2 + " + q.toFixed(2) + "<br>";
             } else if (p<0&&q<0) {
-                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)=" + a.toFixed(2) + "(x + " + -(p.toFixed(2)) + ")^2 - " + -(q.toFixed(2)) + "<br>";
+                document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)= " + a.toFixed(2) + "(x + " + -(p.toFixed(2)) + ")^2 - " + -(q.toFixed(2)) + "<br>";
+            }
+            if (delta==0) {
+              document.getElementById('wyprowadz_pk_maz').innerHTML = "Postac kanoniczna: f(x)= " + a.toFixed(2) + "(x + " + -(p.toFixed(2)) + ")^2 - " + -(q.toFixed(2)) + "<br>";
             }
             }  
 
@@ -53,27 +62,27 @@
                 document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: brak, delta<0";
             } else if (delta==0) {
                 x = -b / (2*a);
-                document.getElementById('wyprowadz_M_maz').innerHTML = "Miejsce zerowe: x0=" + x + " , delta=0";
+                document.getElementById('wyprowadz_M_maz').innerHTML = "Miejsce zerowe: x0= " + x + ", delta=0";
 
                 if (x>0) {
-                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x - " + x.toFixed(2) + ")^2";
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)= " + a.toFixed(2) + "(x - " + x.toFixed(2) + ")^2";
                 } else if (x<0) {
-                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x + " + -(x.toFixed(2)) + ")^2";
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)= " + a.toFixed(2) + "(x + " + -(x.toFixed(2)) + ")^2";
                 }
 
             } else if (delta>0) {
                 x1 = (-b - Math.sqrt(delta)) / (2*a);
                 x2 = (-b + Math.sqrt(delta)) / (2*a);
-                document.getElementById('wyprowadz_M_maz').innerHTML = "Miejsca zerowe: x1=" + x1 + " x2=" + x2 + ", delta>0";
+                document.getElementById('wyprowadz_M_maz').innerHTML = "Miejsca zerowe: x1= " + x1 + ", x2= " + x2 + ", delta>0";
 
                 if (p>0&&q>0) {
-                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x - " + x1.toFixed(2) + ")(x - " + x2.toFixed(2) + ")<br>";
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)= " + a.toFixed(2) + "(x - " + x1.toFixed(2) + ")(x - " + x2.toFixed(2) + ")<br>";
                 } else if (p>0&&q<0) {
-                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x - " + x1.toFixed(2) + ")(x + " + -(x2.toFixed(2)) + ")<br>";
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)= " + a.toFixed(2) + "(x - " + x1.toFixed(2) + ")(x + " + -(x2.toFixed(2)) + ")<br>";
                 } else if (p<0&&q>0) {
-                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x + " + -(x1.toFixed(2)) + ")(x - " + x2.toFixed(2) + ")<br>";
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)= " + a.toFixed(2) + "(x " + -(x1.toFixed(2)) + ")(x + " + -(x2.toFixed(2)) + ")<br>";
                 } else if (p<0&&q<0) {
-                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)=" + a.toFixed(2) + "(x + " + -(x1.toFixed(2)) + ")(x + " + -(x2.toFixed(2)) + ")<br>";
+                    document.getElementById('wyprowadz_pi_maz').innerHTML = "Postac iloczynowa: f(x)= " + a.toFixed(2) + "(x + " + -(x1.toFixed(2)) + ")(x + " + -(x2.toFixed(2)) + ")<br>";
                 }
             }
         }
@@ -83,18 +92,19 @@
             b = parseFloat(b_maz);
             c = parseFloat(c_maz);
 
-            p = -(b)/(2*a);
+            p = (-b)/(2*a);
 
             if (a>0) {
-                document.getElementById('wyprowadz_O_maz').innerHTML = "Funkcja maleje w przedziale=(-∞, " + p.toFixed(2) + "], i rośnie w  przedziale [" + p.toFixed(2) + ", ∞)";
+                document.getElementById('wyprowadz_O_maz').innerHTML = "Funkcja maleje w przedziale= (-∞, " + p.toFixed(2) + "], i rośnie w  przedziale [" + p.toFixed(2) + ", ∞)";
             } else if (a<0) {
-                document.getElementById('wyprowadz_O_maz').innerHTML = "Funkcja rośnie w przedziale=(-∞, " + p.toFixed(2) + "], i maleje w przedziale [" + p.toFixed(2) + ", ∞)";
+                document.getElementById('wyprowadz_O_maz').innerHTML = "Funkcja rośnie w przedziale= (-∞, " + p.toFixed(2) + "], i maleje w przedziale [" + p.toFixed(2) + ", ∞)";
             }
         }
     </script>
 </head>
 <body>
-    <h1>Funkcja kwadratowa - Kalkulator</h1>
+  <div style="font-size: 2cm; color: green;">
+    <p>Funkcja kwadratowa - Kalkulator</p>
     <form name="formularz" action="..." onsubmit="W_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); M_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); O_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); Blad_mazgaj(this.A_maz.value, this.B_maz.value, this.C_maz.value); return false">
         <label for="A_maz">Podaj a:</label>
         <input size="6" name="A_maz"><br><br>
@@ -102,14 +112,15 @@
         <input size="6" name="B_maz"><br><br>
         <label for="C_maz">Podaj c:</label>
         <input size="6" name="C_maz"><br><br>
-        <input type="submit" value="Liczenie">
+        <input type="submit" value="Oblicz">
     </form>
+  </div>
     <table style="font-size: 2cm; color: green;">
         <tr id="wyprowadz_W_maz"></tr>
         <tr id="wyprowadz_pk_maz"></tr>
         <tr id="wyprowadz_M_maz"></tr>
         <tr id="wyprowadz_pi_maz"></tr>
         <tr id="wyprowadz_O_maz"></tr>
-    </table>
+    </table>   
 </body>
 </html>
