@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        a=0;
+        b=0;
+        i=0;
+        while(a<20 ||  a>60)
+        a = prompt("podaj a w przedziale 20-60");
+        while(b<20 || b>60)
+        b = prompt("podaj b w przedziale 20-60");
+        while(i<6)
+        i = prompt("Podaj poczatkowa wielkosc tekstu");
+
+        tekst = prompt("Podaj tekst");
+        if(a>b)
+        document.write("<p style=\"font-size:"+(i-5)+"px; color: black;\"><br>"+tekst+"<br></p>");
+        else
+        document.write("<p style=\"font-size:"+(i+5)+"px; color: black;\"><br>"+tekst+"<br></p>");
+
+    </script>
+    
+</body>
+</html>
