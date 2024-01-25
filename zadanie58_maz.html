@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+    var p;
+    a = prompt("Podaj pierwsza liczbe");
+    b = prompt("Podaj druga liczbe");
+    p = a;
+    if(a>b)
+    {
+        for(;a>b;b++,p++)
+        if(p%2==1)
+        document.write(p+" ");
+
+        
+    }else if(b>a)
+    {
+        for(;b>a;b--)
+        if(b%2==1+" ")
+        document.write(b+" ");
+    }else if(b==a)
+    {
+        document.write("Nie ma zadnych nieparzystych liczb");
+
+
+    }
+
+
+
+
+    </script>
+
+</body>
+</html>
