@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablice 7 (66)</title>
+</head>
+<body>
+
+<div id="imageContainer">
+    <img id="sliderImage" src="" alt="Slider Image">
+</div>
+
+<script>
+    var images = ["https://i.wpimg.pl/1200x/d.wpimg.pl/1229202532-852953857/spider-man.jpg", "https://cdn.cloudflare.steamstatic.com/steam/apps/1817070/ss_dfba6f2477bfa42be69ddfdffbd421d3943d20bf.1920x1080.jpg?t=1700663145", "https://m.media-amazon.com/images/M/MV5BZWJhOWMyMTktMzlkZS00NzljLWE1MTItYjM3OTI3MTM3YjlhXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_QL75_UX500_CR0,0,500,281_.jpg"]; // Dodaj ścieżki do swoich obrazków
+    var currentIndex = 0;
+    var sliderImage = document.getElementById("sliderImage");
+
+    function changeImage() {
+        sliderImage.src = images[currentIndex];
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    setInterval(changeImage, 2000);
+    changeImage(); // Dodane, aby wyświetlić pierwszy obraz od razu
+</script>
+
+</body>
+</html>
