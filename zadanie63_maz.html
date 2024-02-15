@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Tablice 4 (63)</title>
+</head>
+<body>
+ <script>
+    
+ var Tablica_N = new Array('Anna', 'Adam', 'Piotr', 'Ewa', 'Paweł', 'Marcin', 'Ela');
+ 
+ for (i = 0; i<Tablica_N.length; i++)
+ {
+ document.write(Tablica_N[i] + "<br>");
+ }
+ document.write("<br>Po dolaczeniu elementu <br><br>");
+ Tablica_N.push('Daniel');
+ for (i = 0; i<Tablica_N.length; i++)
+ {
+ document.write(Tablica_N[i] + "<br>");
+ }
+ Tablica_N.shift()
+ document.write("<br>Po usuneciu pierwszego elementu <br><br>");
+ for (i = 0; i<Tablica_N.length; i++)
+ {
+ document.write(Tablica_N[i] + "<br>");
+ }
+ Tablica_N.reverse();
+ document.write("<br>Po odwroceniu<br><br>");
+ for (i = 0; i<Tablica_N.length; i++)
+ {
+ document.write(Tablica_N[i] + "<br>");
+ }
+ 
+ </script>
+</body>
+</html>
