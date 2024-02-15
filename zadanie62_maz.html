@@ -2,14 +2,20 @@
 <html lang="pl">
 <head>
  <meta charset="UTF-8">
- <title>Tabele zadanie2</title>
+ <title>Tablice 3 (62)</title>
 </head>
 <body>
  <script>
- var Tab_maz = new Array('Jabłko', 'Gruszka', 'Truskawka', 'Malina', 'Brzoskwinia', 'Jagoda', 'Agrest');
- for (i = 0; i<Tab_maz.length; i++)
+ var Tablica_N = new Array('Jabłko', 'Gruszka', 'Mandarynka', 'Banan', 'Kiwi', 'Liczi', 'Brzoskwinia');
+ for (i = 0; i<Tablica_N.length; i++)
  {
- document.write(Tab_maz[i] + "<br>");
+ document.write(Tablica_N[i] + "<br>");
+ }
+ document.write("<br>");
+ Tablica_N.reverse();
+ for (i = 0; i<Tablica_N.length; i++)
+ {
+ document.write(Tablica_N[i] + "<br>");
  }
  </script>
 </body>
