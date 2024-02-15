@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablice 9 (68)</title>
+</head>
+<body>
+
+    Wiersze:<input type="text" id="Wie" value=""> Kolumny:<input type="text" id="Kol" value="">
+    <br>
+    <button id="myButton">Twórz Tabelę</button>
+
+    <script>
+        var button = document.getElementById("myButton");
+        button.addEventListener("click", function() {
+            var tab = [];
+            for (var i = 0; i < 9; i++) {
+                tab[i] = prompt("Podaj wartość");
+            }
+
+            // Inicjalizacja zmiennych
+            var suma = 0;
+
+            // Wyświetlenie macierzy 3x3
+            for (var i = 0; i < 9; i++) {
+                document.write(tab[i] + " ");
+                if ((i + 1) % 3 === 0) {
+                    document.write("<br>");
+                }
+            }
+
+            // Obliczenia dla metody Sarrusa
+            suma = (parseInt(tab[0]) * parseInt(tab[4]) * parseInt(tab[8])) +
+                   (parseInt(tab[1]) * parseInt(tab[5]) * parseInt(tab[6])) +
+                   (parseInt(tab[2]) * parseInt(tab[3]) * parseInt(tab[7])) -
+                   (parseInt(tab[2]) * parseInt(tab[4]) * parseInt(tab[6])) -
+                   (parseInt(tab[0]) * parseInt(tab[5]) * parseInt(tab[7])) -
+                   (parseInt(tab[1]) * parseInt(tab[3]) * parseInt(tab[8]));
+
+                   document.write("(" + tab[0] + "*" + tab[4] + "*" + tab[8] + "+" + tab[1] + "*" + tab[5] + "*" + tab[6] + ")-(" + tab[2] + "*" +
+                tab[5] + "*" + tab[6] + "+" + tab[0] + "*" + tab[5] + "*" + tab[7] + "+" + tab[1] + "*" + tab[3] + "*" + tab[8] + ")=" + suma);
+        });
+    </script>
+
+</body>
+</html>
