@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        main{
+
+            width:20%;
+            height:33%;
+            border:3px double black;
+            background-color: plum;
+        }
+
+        p{
+            margin-top:7x;
+            font-size: 25px;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <br><br><br>
+    <center>
+    <main class="kalendarz">
+        <p class="rok" style="font-weight: bold;"></p>
+        <p class="miesiac" style="font-size: 35px; margin-top:1px"></p>
+        <p class="dzien" style="font-weight: bold;"></p>
+        <p class="tygodnia" style="font-size: 35px; margin-top:1px"></p>
+    </main>
+    </center>
+    <script>
+        const rok = document.querySelector(".rok")
+        const miesiac_d = document.querySelector(".miesiac")
+        const dzien_d = document.querySelector(".dzien")
+        const tygodnia = document.querySelector(".tygodnia")
+        let dzien = ""
+        let miesiac = ""
+        function zmien_na_polski_dzien(dzien)
+        {
+            dzien = DayName[dzien]
+            return dzien
+        }
+        function zmien_na_polski_miesiac(miesiac)
+        {
+            return miesiac = MonthName[miesiac]
+        }
+        DayName = new Array("niedziela","poniedziałek","wtorek","środa","czwartek","piątek","sobota" )
+ 
+        MonthName = new Array("styczeń ","luty ","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrześień","październik","listopad","grudzień")
+ 
+        const date = new Date();
+        tygodnia.textContent = zmien_na_polski_dzien(date.getDay())
+        dzien_d.textContent = date.getDate()
+        miesiac_d.textContent = zmien_na_polski_miesiac(date.getMonth())
+        rok.textContent = date.getFullYear();
+    </script>
+</body>
+</html>
