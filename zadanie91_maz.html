@@ -1,0 +1,54 @@
+<html>
+<head>
+    <script language='JavaScript' type='text/JavaScript'>
+        function weryfikacja_hasla() 
+        {
+        var prob = 1;
+        var haslo = prompt('Podaj hasło',''); 
+        if (haslo != null) 
+        {
+        while (prob < 3) 
+        {
+        if (!haslo) history.go(-1);
+        //Metoda toLowerCase zwraca wartość łańcucha znaków skonwertowanego na małe litery
+        if (haslo.toLowerCase() == 'jarek') 
+        {
+        alert('Hasło OK!');
+        break;
+        } 
+        prob+=1;
+        var haslo = prompt('Złe hasło. Spróbuj ponownie','Hasło');
+        }
+        } 
+        if (haslo !=null) {
+        if (haslo.toLowerCase()!='Hasło' + prob ==3) history.go(-1);return ' ';}}
+
+
+        function weryfikacja_loginu() 
+        {
+        var prob1 = 1;
+        var login = prompt('Podaj login',''); 
+        if (login != null) 
+        {
+        while (prob1 < 3) 
+        {
+        if (!login) history.go(-1);
+        //Metoda toLowerCase zwraca wartość łańcucha znaków skonwertowanego na małe litery
+        if (login.toLowerCase() == 'sykutera') 
+        {
+        alert('Login OK!');
+        window.open('index.html','_top');
+        break;
+        } 
+        prob+=1;
+        var login = prompt('Złe hasło. Spróbuj ponownie','Hasło');
+        }
+        } 
+        if (login !=null) {
+        if (login.toLowerCase()!='Hasło' + prob ==3) history.go(-1);return ' ';}}
+        </script>
+</head>
+<body>
+<input type="button" value="logowanie" onClick="weryfikacja_hasla(this.form); weryfikacja_loginu(this.form); return false;"/><br><br>
+</body>
+</html>
