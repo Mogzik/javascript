@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+dzis_maz = new Date();
+ document.write("<br>Aktualny czas : ",dzis_maz.getHours(),":",dzis_maz.getMinutes(),"<br>");
+
+function Mazgaj_start(){
+ start_maz = new Date();
+ poczatek_maz=start_maz.getTime()
+ }
+function Mazgaj_stop(){
+ stop_maz = new Date();
+ koniec_maz=stop_maz.getTime()
+ 
+ roznica_maz=koniec_maz-poczatek_maz;
+ pokaz1.innerHTML=roznica_maz/1000+" s";
+} 
+
+
+
+
+
+
+    </script>
+    <input type="button" name="Button1" value="START stoper" onclick="Mazgaj_start()">
+    <input type="button" name="Button2" value="STOP stoper" onclick="Mazgaj_stop()">
+    <table style="border:3px solid black ;">
+        <tr id="pokaz1"></tr>
+    </table>       
+</body>
+</html>
