@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function oblicz(dane){
+            wynik.innerHTML=" ";
+            cena_koncowa=0;
+            if ( dane.choice[0].checked) 
+            {
+             cena_koncowa=parseFloat(dane.cena.value);
+            } 
+            if ( dane.choice[0].checked) 
+            {
+             cena_koncowa=parseFloat(dane.cena.value);
+            } 
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color: rgb(177, 177, 0);height: 500px;width: 500px;">
+        <br>
+    <form>
+    <center><p style="font-weight: bold;font-size: 20px;">AlkoCAR</p></center>
+    <p> Spozylem <input style="width:50px;" type="text" name="piwo"> ml piwa (1 kufel = 500ml)</p>
+    <p> Spozylem <input style="width:50px;" type="text" name="wino"> ml wina (1 lampka = 150ml)</p>
+    <p> Spozylem <input style="width:50px;" type="text" name="wodka"> ml wodki (1 kieliszek = 50ml)</p>
+    <p> ile godzin temu spozywales trunki? <input style="width:50px;" type="text" name="txt1"></p>
+    Okresl swoja plec <input style="width:50px;" name="choice" type="radio" value="1">mezczyzna <input style="width:50px;" name="choice" type="radio" value="2">Kobieta<br><br>
+    Okresl swoja wage (w kg) <input style="width:50px;" type="text" name="waga"><br><br>
+    Czy piles na pusty czy pelny zaladek <br>
+    pusty<input style="width:50px;" name="inne" type="radio" value="1"> 
+    w polowie<input style="width:50px;" name="inne" type="radio" value="2"> 
+    pelny<input style="width:50px;" name="inne" type="radio" value="3">
+    <br><br>
+    <center><input style="background-color:white ;width: 120px; height:50px ;" type="button" name="button3" value="Oblicz" onClick="oblicz(this.form)"></center>
+    </form>
+</div>
+</body>
+</html>
