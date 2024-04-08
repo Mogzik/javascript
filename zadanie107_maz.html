@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strona z menu i przyciskami</title>
+<style>
+    /* Styl dla głównego kontenera */
+    #container {
+        width: 1500px; /* Szerokość okna */
+        margin: 75px auto; /* Wyśrodkowanie na stronie */
+        border: 2px solid #ccc; /* Grubość i styl obramowania */
+        border-radius: 10px; /* Zakrąglenie rogów */
+        padding: 10px; /* Wewnętrzny odstęp */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Cień */
+    }
+
+    /* Styl dla menu */
+    #menu {
+        margin-left: 40px;
+        float: left;
+        width: 7%; /* Szerokość menu */
+        padding: 20px;
+        height: 720px; /* Wysokość menu */
+        overflow-y: auto; /* Dopuszczenie przewijania */
+    }
+
+    /* Styl dla przycisków w menu */
+    #menu button {
+        display: block; /* Wyświetlenie przycisków jako bloków */
+        margin-top: 20px; /* Margines na dół */
+    }
+
+    /* Styl dla przycisków */
+    #buttons {
+        clear: both;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Styl dla głównego kontenera */
+    #mainContainer {
+        float: right;
+        width: 83%; /* Szerokość okna z zawartością */
+        padding: 20px;
+    }
+
+    /* Styl dla iframe z załadowaną stroną */
+    #mainFrame {
+        width: 100%;
+        height: 650px; /* Wysokość okna z zawartością */
+        border: 1px solid #ccc; /* Grubość i styl obramowania */
+        border-radius: 5px; /* Zakrąglenie rogów */
+    }
+    .b1 {
+        background-color: #32CD32;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+    .b2 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        width: 100px;
+        height: 35px;
+    }
+    .b1:hover{
+        background-color: darkgreen;
+    }
+    .b2:hover{
+        background-color: #2E8B57;
+    }
+    h2{
+        margin-bottom: 200px;
+    }
+
+</style>
+</head>
+<body>
+    <!-- Cała zawartość w kontenerze -->
+    <div id="container">
+        <!-- Menu po lewej stronie -->
+        <div id="menu">
+            <h2>MENU</h2>
+            <button class="b2" onclick="openPage('https://gol24.pl/ekstraklasa/tabela/')">Ekstraklasa</button>
+            <button class="b2" onclick="openPage('https://gol24.pl/1-liga/tabela/')">1 Liga</button>
+            <button class="b2" onclick="openPage('https://gol24.pl/2-liga/tabela/')">2 Liga</button>
+        </div>
+        
+        <!-- Duże okno z załadowaną stroną -->
+        <div id="mainContainer">
+            <iframe id="mainFrame" src=""></iframe>
+        </div>
+        
+        <!-- Przyciski na dole -->
+        <div id="buttons">
+            <button class="b1" onclick="forwardPage()">Strona do przodu</button>
+            <button class="b1" onclick="printPage()">Drukuj stronę</button>
+            <button class="b1" onclick="backPage()">Wstecz strona</button>
+            <button class="b1" onclick="refreshPage()">Odśwież stronę</button>
+        </div>
+    </div>
+
+    <script>
+        // Funkcja otwierająca podaną stronę w iframe
+        function openPage(pageUrl) {
+            document.getElementById("mainFrame").src = pageUrl;
+        }
+
+        // Funkcja przesuwająca stronę do przodu
+        function forwardPage() {
+            history.forward();
+        }
+
+        // Funkcja cofająca stronę do tyłu
+        function backPage() {
+            history.back();
+        }
+
+        // Funkcja odświeżająca stronę
+        function refreshPage() {
+            location.reload();
+        }
+
+        // Funkcja drukująca stronę
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
