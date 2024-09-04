@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style javascript</title>
+    <link rel="stylesheet" href="styl6.css">
+</head>
+<body>
+    <section id="lewy">
+        <h1>Konfiguracja stylów</h1>
+        <p>Podaj kolor tła</p>
+        <button value="Indygo" onclick="zmienTlo('indigo')">Indygo</button>
+        <button value="SteelBlue" onclick="zmienTlo('steelblue')">SteelBlue</button>
+        <button value="Olive" onclick="zmienTlo('olive')">Olive</button>
+        <p>Podaj kolor czcionki</p>
+        <select name="" id="lista" onchange="zmienKolor()">
+            <option value="White">White</option>
+            <option value="Tan">Tan</option>
+            <option value="Bisque">Bisque</option>
+            <option value="Plum">Plum</option>
+        </select>
+        <p>Podaj rozmiar czcionki w procentach</p>
+        <input id="txt" type="text" value="100%" onblur="zmienRozmiar()">
+        <p>Czy rysunek ma miec ramke</p>
+        <input onchange="zmienPunktor()" id="chk" type="checkbox" checked onchange="rysujRamke()">Rysuj ramkę
+        <p>Jaki jest typ punktora listy</p>
+        <input id="r1" type="radio" value="disc" onchange="zmienPunktor(r1)">dysk
+        <input id="r2" type="radio" value="square" onchange="zmienPunktor(r1)">kwadrat
+        <input id="r3" type="radio" value="circle" onchange="zmienPunktor(r1)">okrąg
+    </section>
+    <section id="prawy">
+        <img src="gibraltar.jpg" alt="gibraltar">
+        <ul>
+            <li>element 1</li>
+            <li>element 2</li>
+            <li>element 3</li>
+        </ul>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+        </p>
+    </section>
+    <footer>
+        Autor Maksymilian Mazgaj
+    </footer>
+</body>
+</html>
+<script>
+    const zmienTlo=(kolor)=>{
+        prawy.style.backgroundColor=kolor;
+    }
+
+    const zmienKolor=()=>{
+        prawy.style.color=lista.value;
+    }
+
+    const zmienRozmiar=()=>{
+        prawy.style.fontSize=txt.value;
+    }
+
+    const rysujRamke=()=>{
+        if (chk.cheked)
+        {
+            img.style.border="1px solid white";
+        }else{
+            img.style.border="none";
+        }
+    }
+
+    const zmienPunktor=(id)=>{
+        ul.style.listStyle=id.value;
+    }
+</script>

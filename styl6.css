@@ -1,0 +1,53 @@
+*{
+    font-family: georgia;
+}
+
+#lewy{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+    float: left;
+}
+
+#prawy{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    float: left;
+    overflow: auto;
+}
+
+footer{
+    background-color: dimgray;
+    color: white;
+    clear: both;
+}
+
+p{
+    padding: 10px;
+}
+
+img{
+    padding: 10px;
+    border: 1px white solid;
+}
+
+img, ul{
+    float: left;
+}
+
+#prawy p{
+    clear: both;
+}
+
+button[value="Indygo"]{
+    background-color: indigo;
+}
+button[value="SteelBlue"]{
+    background-color: steelblue;
+}
+button[value="Olive"]{
+    background-color: olive;
+}
